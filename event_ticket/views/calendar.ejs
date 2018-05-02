@@ -1,0 +1,273 @@
+
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="layout/dist/css/skins/_all-skins.min.css">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="layout/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="layout/plugins/fullcalendar/fullcalendar.min.css">
+    <link rel="stylesheet" href="layout/plugins/fullcalendar/fullcalendar.print.css" media="print">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="layout/dist/css/AdminLTE.min.css">
+    <!-- daterange picker -->
+    <link rel="stylesheet" href="layout/plugins/daterangepicker/daterangepicker-bs3.css">
+    <!-- iCheck for checkboxes and radio inputs -->
+    <link rel="stylesheet" href="layout/plugins/iCheck/all.css">
+    <!-- Bootstrap Color Picker -->
+    <link rel="stylesheet" href="layout/plugins/colorpicker/bootstrap-colorpicker.min.css">
+    <!-- Bootstrap time Picker -->
+    <link rel="stylesheet" href="layout/plugins/timepicker/bootstrap-timepicker.min.css">
+    <!-- Select2 -->
+    <link rel="stylesheet" href="layout/plugins/select2/select2.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="layout/dist/css/skins/_all-skins.min.css">
+
+</head>
+<body>
+    <body class="hold-transition skin-blue sidebar-mini">
+    <div class="content-wrapper" style="min-height: 826px;margin-left: 0px;">
+        <!-- Content Header (Page header) -->
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+
+                <div class="col-md-3">
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">Create Event</h3>
+                        </div>
+                        <div class="box-body">
+                                <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                                    <!--<button type="button" id="color-chooser-btn" class="btn btn-info btn-block dropdown-toggle" data-toggle="dropdown">Color <span class="caret"></span></button>-->
+                                    <ul class="fc-color-picker" id="color-chooser">
+                                        <li><a class="text-aqua" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-blue" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-light-blue" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-teal" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-yellow" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-orange" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-green" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-lime" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-red" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-purple" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-fuchsia" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-muted" href="#"><i class="fa fa-square"></i></a></li>
+                                        <li><a class="text-navy" href="#"><i class="fa fa-square"></i></a></li>
+                                    </ul>
+                                </div><!-- /btn-group -->
+                                    <div class="form-group">
+                                        <input id="event-title" type="text" class="form-control" placeholder="Event Title" value="Kieler">
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="location" type="text" class="form-control" placeholder="Location" value="kiel">
+                                    </div>
+                                    <!-- Date dd/mm/yyyy -->
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-addon">
+                                                <i class="fa fa-calendar"></i>
+                                            </div>
+                                            <input type="text" id="startedDate" class="form-control" placeholder="dd/mm/yyyy">
+                                        </div><!-- /.input group -->
+                                    </div><!-- /.form group -->
+                                    <div class="form-group">
+                                        <textarea class="form-control" id="description" rows="3" placeholder="Short Description"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="price" type="number" class="form-control" placeholder="Price ticket" >
+                                    </div>
+                                    <div class="form-group">
+                                        <input id="maximumNumber" type="number" class="form-control" placeholder="Maximum Numbers">
+                                    </div>
+                                    <div class="input-group-btn">
+                                        <button id="add-new-event"type="button" class="btn btn-primary btn-flat">Add</button>
+                                    </div><!-- /btn-group -->
+
+
+                        </div>
+                    </div>
+                </div><!-- /.col -->
+                <div class="col-md-9">
+                    <div class="box box-primary">
+                        <div class="box-body no-padding">
+                            <!-- THE CALENDAR -->
+                            <div id="calendar"></div>
+                            <div class="dayClickWindow"></div>
+                        </div><!-- /.box-body -->
+                    </div><!-- /. box -->
+                </div><!-- /.col -->
+            </div><!-- /.row -->
+        </section><!-- /.content -->
+    </div>
+
+    </body>
+</body>
+    <script src="layout/plugins/jQuery/jQuery-2.1.4.min.js"></script>
+    <!-- Bootstrap 3.3.5 -->
+    <script src="layout/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Slimscroll -->
+    <script src="layout/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+    <!-- FastClick -->
+    <script src="layout/plugins/fastclick/fastclick.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="layout/dist/js/app.min.js"></script>
+    <!-- AdminLTE for demo purposes -->
+    <script src="layout/dist/js/demo.js"></script>
+    <!-- fullCalendar 2.2.5 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js"></script>
+    <script src="layout/plugins/fullcalendar/fullcalendar.min.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src='layout/dist/js/bootbox.min.js'></script>
+
+    <script>
+        var socket = io();
+        var curEvents = [];
+        function converDateToString(date1){
+            var date = new Date(date1);
+            var weekday = new Array(7);
+            weekday[0] = "Sunday";
+            weekday[1] = "Monday";
+            weekday[2] = "Tuesday";
+            weekday[3] = "Wednesday";
+            weekday[4] = "Thursday";
+            weekday[5] = "Friday";
+            weekday[6] = "Saturday";
+
+            var n = weekday[date.getDay()] ;
+
+            var monthNames = [
+                "January", "February", "March",
+                "April", "May", "June", "July",
+                "August", "September", "October",
+                "November", "December"
+            ];
+
+            var day = date.getDate();
+            var monthIndex = date.getMonth();
+            var year = date.getFullYear();
+
+            return n + ', ' + monthNames[monthIndex] + ' ' +day + ', ' + year;
+        }
+        $("#add-new-event").click(function (e) {
+            e.preventDefault();
+            //Get value and make sure it is not null
+            var eventTitle = $("#event-title").val();
+            var eventLocation = $("#location").val();
+            var startedDate = $("#startedDate ").val();
+            var price = $("#price").val();
+            var shortDescription = $("#description").val();
+            var maximumNumber = $("#maximumNumber").val();
+//            if (eventTitle.length == 0 && eventLocation.length == 0 && startedDate.length == 0 &&
+//                price.length == 0 && shortDescription.length == 0 && maximumNumber.length == 0) {
+//                return;
+//            }
+
+            var date = startedDate.substring(0,2);
+            var month = startedDate.substring(3,5);
+            var year = startedDate.substring(6,10);
+            var datef = year+'-'+month+'-'+date;
+            var fulldate = new Date(datef).toISOString().slice(0, 19).replace('T', ' ');
+
+          //  var tempDate = new Date().toISOString().slice(0, 19). replace('T', ' ');
+            var objectSenderToServer = {
+                eventName: eventTitle,
+                shortDescription : shortDescription,
+                price : price,
+                numberPPInvolved : maximumNumber,
+                numberTicketSold : 0,
+                limitedAge: 0,
+                location : eventLocation,
+                startedDate : fulldate,
+                eventTime: '8pm',
+                image : 'http://www.childrenswish.ca/wp-content/uploads/2016/12/Childrens-Wish-Wish-Month-Logo.png'
+            }
+            socket.emit('addEventToDatabase', objectSenderToServer);
+
+            $("#event-title").val("");
+            $("#location").val("");
+            $("#startedDate ").val("");
+            $("#price").val("");
+            $("#description").val("");
+            $("#maximumNumber").val("");
+
+            location.reload();
+//            socket.on('returnRecordAdded', function (event) {
+//
+//
+//            });
+        });
+        function showCalendar(events){
+            var backgroundColor = '';
+            var borderColor = '';
+
+            for(var i = 0 ; i < events.length; i ++){
+                if(i % 2 == 0){
+                    backgroundColor = "#00c0ef";
+                    borderColor= "#00c0ef";
+                }else{
+                    backgroundColor = "#00a65a";
+                    borderColor= "#00a65a";
+                }
+                curEvents.push({
+                    title : events[i].eventName,
+                    start: events[i].startedDate,
+                    allDay:false,
+                    backgroundColor: backgroundColor,
+                    borderColor: borderColor,
+                    eventID : events[i].eventID,
+                    eventLocation : events[i].location,
+                    eventPrice: events[i].price,
+                    eventTime: events[i].eventTime
+                })
+            }
+            //Date for the calendar events (dummy data)
+            var date = new Date();
+            var d = date.getDate(),
+                m = date.getMonth(),
+                y = date.getFullYear();
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month'
+                },
+                buttonText: {
+                    today: 'today',
+                    month: 'month',
+                },
+                //Random default events
+                events: curEvents,
+                editable: true,
+                // this allows things to be dropped onto the calendar !!!
+                eventClick: function(event) {
+
+                    var containOfAlert = "" +
+                        "<h2>" + event.title + "</h2>" +
+                        "<p>" +
+                        "<i class=\"fa fa-calendar\" aria-hidden=\"true\"></i>&nbsp&nbsp&nbsp"+ converDateToString(event.start) + "<br>" +
+                        "<i class=\"fa fa-clock-o\" aria-hidden=\"true\"></i>&nbsp&nbsp&nbsp"+event.eventTime +
+                        "<br><i class=\"fa fa-map-marker margin-r-5\"></i>&nbsp&nbsp&nbsp"+ event.eventLocation+
+                        "<br><i class=\"fa fa-money\" aria-hidden=\"true\"></i>&nbsp&nbsp&nbsp" + event.eventPrice+ " <i class=\"fa fa-eur\" aria-hidden=\"true\"></i>"+
+                        "<br><a href='/eventinfo/ "+event.eventID+"'>Read More And Order Ticket</a>" +
+                        "</p>";
+                    bootbox.alert(containOfAlert);
+                }
+            });
+        }
+
+        $(function () {
+            socket.emit('getEvents', 'get list events');
+            socket.on('receivedEvents', function (events) {
+                showCalendar(events);
+            });
+
+        });
+
+    </script>
+</html>

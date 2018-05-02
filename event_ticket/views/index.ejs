@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <h1>Full stack development </h1> <!--Block level element tag-->
+    <div class="row">
+      <div class="col-sm-8">
+        <form class="form-horizontal">
+          <button onclick="printNow()" class="btn btn-info" style="float: right;">Print</button>
+          <div class="form-group">
+
+            <label for="name_txt" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="name_txt" placeholder="Name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+              <input type="email" class="form-control" id="email" placeholder="Email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputPassword3" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button  onclick="informInfo()" class="btn btn-info" style="float: right;">Sign up</button>
+              <button  class="btn btn-info" style="float: right;" id="button_jquery">Sign up with Jquery</button>
+
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-sm-4">
+      </div>
+
+    </div>
+    <br> <br>
+    <div class="row">
+
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>About me</th>
+          <th>Password</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Chris</td>
+          <td>chris@fh-kiel.de</td>
+          <td>
+            A quick brown fox jumps over the lazy dog
+            A quick brown fox jumps over the lazy dog
+          </td>
+          <td>12345</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Muthu</td>
+          <td>muthu@fh-kiel.de</td>
+          <td>
+            A quick brown fox jumps over the lazy dog
+            A quick brown fox jumps over the lazy dog
+          </td>
+          <td>12345</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    </div>
+  </body>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="javscript/script.js"></script>
+</html>

@@ -1,0 +1,85 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/layout/dist/css/skins/_all-skins.min.css">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/layout/dist/css/AdminLTE.min.css">
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="layout/dist/css/skins/_all-skins.min.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="content-wrapper" style="min-height: 826px;margin-left: 0px;">
+    <!-- Content Header (Page header) -->
+
+    <!-- =============================================== -->
+
+    <div style="padding-top: 10px"></div>
+    <!-- Main content -->
+    <section class="content">
+
+        <h1></h1>
+        <div class="row ">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="box box-solid box-primary" style="border-left-width: 0px; border-top-width: 0px; border-bottom-width: 0px;">
+                    <div class="box-header with-border" style="background-color: lightgrey">
+                        <h3 class="box-title">STEP PUT INFORMATION CUSTOMER</h3>
+                    </div>
+                    <br>
+                    <div class="post">
+                        <div class="user-block" style="padding-left: 12px;">
+                            <img class="img-circle img-bordered-sm" src="/layout/dist/img/start.png" alt="user image">
+                            <span class='username'>
+                              <a href="#"> Thank you for your interesting our event Disney on Ice.</a>
+                              <a href='#' class='pull-right btn-box-tool'><i class='fa fa-times'></i></a>
+                            </span>
+                            <span class='description'>Please enter for information below.</span>
+                        </div><!-- /.user-block -->
+                    </div>
+                    <!-- /.box-header -->
+                    <!-- form start -->
+                    <form id="formPO"  action="/submit-customer-information" method="post" >
+                        <div class="box-body">
+                            <div class="form-group">
+                                <label for="customer-name">Your name</label>
+                                <input type="text" name="customerName"  class="form-control "  required="true" id="customer-name">
+                                <input type="hidden" value="<%=eventID%>" name="eventID">
+                                <input type="hidden" value="<%=numberSold%>" name="numberTicketSolds">
+                            </div>
+                            <div class="form-group">
+                                <label for="customerAdress">Your Address</label>
+                                <input name="customerAdress" type="text" class="form-control " required="true" id="customerAdress" placeholder="Address"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="customerTelephone">Your Telephone</label>
+                                <input name="customerTelephone" type="text" class="form-control " required="true" id="customerTelephone" placeholder=" Telephone"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="numberOfTickets">How many tickets you want to buy?</label>
+                                <input name="numberOfTickets" type="text" class="form-control " required="true" id="numberOfTickets" value="1"/>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+
+                        <div class="modal-footer">
+                            <button type="submit" style="background: lightskyblue;" class="btn btn-primary btn-flat">BUY TICKET <i class="fa fa-chevron-right"></i></button>
+                            &nbsp;&nbsp;&nbsp;
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+
+    </section><!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+</body>
+</html>

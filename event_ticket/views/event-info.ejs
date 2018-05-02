@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="/layout/dist/css/skins/_all-skins.min.css">
+    <!-- Bootstrap 3.3.5 -->
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/layout/dist/css/AdminLTE.min.css">
+
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="layout/dist/css/skins/_all-skins.min.css">
+</head>
+    <body class="hold-transition skin-blue sidebar-mini">
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 826px;margin-left: 0px;">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+            <div class="row">
+                <div class="col-4 col-md-1">
+                </div>
+                <div class="col-4 col-md-10">
+                    <!-- Default box -->
+                    <div class="box">
+
+                        <div style="padding-left: 100px; padding-right: 70px; padding-top: 20px ">
+                            <img width="1000px" height="350px" src="<%=event.image%>">
+                        </div>
+                        <p></p>
+                        <div style="padding-left: 70px; padding-right: 70px">
+                            <h1 class="box-title" style="font-family: 'Source Sans Pro','Helvetica Neue','Helvetica,Arial,sans-serif'; font-size: 29.5px; color: steelblue;">
+                                <%=event.eventName%></h1>
+                            <div class="box-body">
+
+                                <blockquote>
+                                    <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp&nbsp&nbsp<%=startDate%>
+                                    <br>
+                                    <i class="fa fa-map-marker margin-r-5"></i>&nbsp&nbsp&nbsp<%=event.location%>
+                                    <br>
+                                    <i class="fa fa-clock-o" aria-hidden="true"></i>&nbsp&nbsp&nbsp<%=event.eventTime%>
+                                    <br>
+                                    <i class="fa fa-money" aria-hidden="true"></i>&nbsp&nbsp&nbsp<%=event.price%><i class="fa fa-eur" aria-hidden="true"></i>
+                                    <div align="right">
+                                        <%var link = "/enter-information/" + event.eventID +"/" + event.numberTicketSold%>
+                                        <a class="btn btn-app" style="background: lightskyblue;" href="<%=link%>">
+                                            <span class="badge">
+                                                <%if(event.numberTicketSold == event.numberPPInvolved){%>
+                                                        0
+                                                <%}else{
+                                                    var remaindar = event.numberPPInvolved - event.numberTicketSold;
+                                                %>
+                                                <%=remaindar%>
+                                                <%}%>
+                                            </span>
+                                            <i class="fa fa-inbox"></i> Get Ticket
+                                        </a>
+                                    </div>
+                                </blockquote>
+
+                                <blockquote>
+                                    <%-event.shortDescription%>
+                                </blockquote>
+                            </div><!-- /.box-body -->
+                            <div class="box-footer">
+
+                            </div><!-- /.box-footer-->
+                        </div><!-- /.box -->
+                    </div>
+                    <div class="col-4 col-md-1">
+                    </div>
+                </div>
+            </div>
+        </section><!-- /.content -->
+    </div><!-- /.content-wrapper -->
+    </body>
+</html>
