@@ -15,7 +15,7 @@ var d = new Date,
 var now = new Date();
 
 console.log(now.toISOString());
-fs.writeFile("result/output.txt", dformat,function (err) {
+fs.writeFile("tests/result/output.txt", dformat,function (err) {
     if(err) {
         return console.log(err);
     }
